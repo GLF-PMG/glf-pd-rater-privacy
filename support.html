@@ -466,35 +466,62 @@
     <li><strong>Start Rating</strong> &mdash; You are taken to the PD Rating Calculator, ready to begin. No account or sign-up is required for Free-tier features.</li>
   </ol>
 
-  <h3>Setting Up an AI Provider <span class="badge badge-pro">Pro</span></h3>
-  <p>To use AI-powered report extraction, connect an AI provider in <strong>Settings &rarr; AI Provider</strong>:</p>
+  <h3>How to Get a Claude API Key <span class="badge badge-pro">Pro</span></h3>
+  <p>To use AI-powered report extraction, you need an API key from Anthropic (Claude) or OpenAI:</p>
+
+  <h4>Anthropic (Claude) &mdash; Recommended</h4>
   <ol class="steps">
-    <li>Open <strong>Settings</strong> (gear icon in the top bar).</li>
-    <li>Tap <strong>AI Provider</strong>.</li>
-    <li>Choose your provider: <strong>Anthropic Claude</strong> or <strong>OpenAI GPT-4o</strong>.</li>
-    <li>Enter your API key. You can obtain one from <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a> (Anthropic) or <a href="https://platform.openai.com/" target="_blank">platform.openai.com</a> (OpenAI).</li>
-    <li>Tap <strong>Save</strong>. The app will validate your key immediately.</li>
+    <li>Go to <a href="https://console.anthropic.com" target="_blank"><strong>console.anthropic.com</strong></a></li>
+    <li>Click <strong>Sign Up</strong> (or Sign In if you have an account)</li>
+    <li>Complete the registration with your email</li>
+    <li>Once logged in, click <strong>Settings</strong> in the left sidebar</li>
+    <li>Click <strong>API Keys</strong></li>
+    <li>Click <strong>Create Key</strong></li>
+    <li>Give it a name (e.g., "GLF WC PD Rater")</li>
+    <li>Copy the key &mdash; it starts with <code>sk-ant-api03-...</code></li>
+    <li><strong>Important:</strong> Save it somewhere safe &mdash; you can't view it again after closing</li>
+    <li>In the app: go to <strong>Settings &rarr; AI Provider</strong> &rarr; select <strong>Anthropic (Claude)</strong> &rarr; paste the key &rarr; click <strong>Save</strong></li>
+  </ol>
+
+  <h4>OpenAI (GPT-4o) &mdash; Alternative</h4>
+  <ol class="steps">
+    <li>Go to <a href="https://platform.openai.com/api-keys" target="_blank"><strong>platform.openai.com/api-keys</strong></a></li>
+    <li>Sign in or create an account</li>
+    <li>Click <strong>Create new secret key</strong></li>
+    <li>Copy the key &mdash; it starts with <code>sk-...</code></li>
+    <li>In the app: go to <strong>Settings &rarr; AI Provider</strong> &rarr; select <strong>OpenAI (GPT-4o)</strong> &rarr; paste the key &rarr; click <strong>Save</strong></li>
+  </ol>
+
+  <div class="callout callout-note">
+    <strong>Note &mdash; API Billing</strong>
+    Both providers charge per API usage. You'll need to add a payment method in your provider's console. Typical cost for PD report extraction: approximately $0.05&ndash;$0.15 per report. AI calls use <em>your</em> API key and are billed directly by the provider. The app never stores or transmits your key to any third party.
+  </div>
+
+  <h3>How to Get a MerusCase Bearer Token <span class="badge badge-pro">Pro</span></h3>
+  <p>To pull case data from MerusCase and save PDFs back to cases, you need a bearer token:</p>
+  <ol class="steps">
+    <li>Open the app and go to <strong>Settings &rarr; MerusCase</strong></li>
+    <li>Click <strong>"Open MerusCase Authorization"</strong> &mdash; this opens your browser</li>
+    <li>Log in to MerusCase if prompted</li>
+    <li>Click <strong>"Authorize"</strong> to grant the app access</li>
+    <li>After authorizing, navigate in MerusCase to:
+      <div style="margin:10px 0 10px 20px; font-family:monospace; color:var(--red);">
+        Tools &amp; Settings<br>
+        &nbsp;&nbsp;&rarr; 3rd Party Apps<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&rarr; My Apps<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr; Display Token
+      </div>
+    </li>
+    <li>Copy the <strong>Personal API Token</strong> displayed on that page</li>
+    <li>Go back to the app: <strong>Settings &rarr; MerusCase</strong></li>
+    <li>Paste the token in the <strong>Bearer Token</strong> field</li>
+    <li>Click <strong>Save Token</strong></li>
+    <li>The status should change to <strong style="color:green;">&bull; Connected</strong></li>
   </ol>
 
   <div class="callout callout-note">
     <strong>Note</strong>
-    AI calls use <em>your</em> API key and are billed directly by the provider. The app never stores or transmits your key to any third party.
-  </div>
-
-  <h3>Setting Up MerusCase <span class="badge badge-pro">Pro</span></h3>
-  <p>To pull case data from MerusCase and save PDFs back to cases:</p>
-  <ol class="steps">
-    <li>Open <strong>Settings &rarr; MerusCase</strong>.</li>
-    <li>Follow the on-screen instructions to log in to MerusCase in your browser.</li>
-    <li>Navigate to the <strong>API token page</strong> in your MerusCase account settings.</li>
-    <li>Generate a new OAuth bearer token.</li>
-    <li>Copy the token and paste it into the app.</li>
-    <li>Tap <strong>Connect</strong>. The app will verify the token and confirm the connection.</li>
-  </ol>
-
-  <div class="callout callout-tip">
-    <strong>Tip</strong>
-    Your MerusCase token is stored locally on your Mac. If the token expires, simply repeat the process to generate a new one.
+    Your MerusCase account must have API access enabled. If you don't see "3rd Party Apps" in Tools &amp; Settings, contact your MerusCase administrator. Your token is stored securely on your Mac and is never transmitted to anyone other than MerusCase directly.
   </div>
 
   <h3>Configuring Firm Branding <span class="badge badge-pro">Pro</span></h3>
